@@ -7,7 +7,11 @@ template.innerHTML = `
 		${styles.toString()}
 	</style>
 	<main class="${s.wrapper}">
-		
+		<menu-button class="${s.menuButton}">
+			<span slot="label">
+				Click Me!
+			</span>
+		</menu-button>
 	</main>
 `;
 
