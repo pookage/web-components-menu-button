@@ -14,11 +14,11 @@ Live demo [here](https://pookage.github.io/web-components-menu-button/dist/)
 ## Usage
 
 ```
-	<menu-button>
-		<span slot="label">
-			Click Me
-		</span>
-	</menu-button>
+<menu-button>
+	<span slot="label">
+		Menu
+	</span>
+</menu-button>
 ```
 
 ## Building
