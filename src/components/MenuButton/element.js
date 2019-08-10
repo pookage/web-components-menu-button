@@ -44,8 +44,6 @@ export default class MenuButton extends HTMLElement {
 		const { open } = state;
 		const { wrapper } = this;
 
-		console.log({ open })
-
 		if(open){
 			wrapper.classList.add(s.active);
 			wrapper.classList.remove(s.inactive);

@@ -13,7 +13,12 @@ template.innerHTML = `
 			class="${s.checkbox}" 
 			type="checkbox" 
 		/>
-		<label for="menu-button">
+		<label class="${s.container}" for="menu-button">
+			<span class="${s.icon}">
+				<span class="${s.bar}"></span>
+				<span class="${s.bar}"></span>
+				<span class="${s.bar}"></span>
+			</span>
 			<span class="${s.label} ${s.close}" aria-hidden="true">
 				Close
 			</span>
