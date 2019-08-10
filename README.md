@@ -6,3 +6,5 @@ A Menu Button component with open/closed state made with:
 - CSS Modules
 - SCSS
 - Webpack
+
+Tutorial on youtube [here](https://youtu.be/cbE4KoyZS0Y)

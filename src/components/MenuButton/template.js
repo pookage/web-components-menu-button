@@ -14,7 +14,7 @@ template.innerHTML = `
 			type="checkbox" 
 		/>
 		<label class="${s.container}" for="menu-button">
-			<span class="${s.icon}">
+			<span class="${s.hamburger}">
 				<span class="${s.bar}"></span>
 				<span class="${s.bar}"></span>
 				<span class="${s.bar}"></span>

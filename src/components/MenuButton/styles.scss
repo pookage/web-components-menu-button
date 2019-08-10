@@ -1,4 +1,5 @@
 @import "SHARED/reset.scss";
+@import "./animations.scss";
 
 .wrapper {
 	display: inline-block;
@@ -23,21 +24,23 @@
 		color: var(--color__bg);
 		background-color: var(--color__fg);
 		cursor: pointer;
-		.icon .bar {
+		.hamburger .bar {
 			background-color: var(--color__bg);
 		}
 	}
 
 	&.inactive {
-		.icon .bar {
+		.hamburger .bar {
 			&:nth-child(1){
-				animation: hamburger__top__open .6s both ease-out;
+				transform: translate(-50%, -0.5em);
+				animation: hamburger__top__open .6s ease-out;
 			}
 			&:nth-child(2){
 				opacity: 1;
 			}
 			&:nth-child(3){
-				animation: hamburger__bottom__open .6s both ease-out;
+				transform: translate(-50%, 0.5em);
+				animation: hamburger__bottom__open .6s ease-out;
 			}
 		}
 		.label {
@@ -51,16 +54,29 @@
 			}
 		}
 	}
+	&.inactive:hover,
+	&.active {
+		.hamburger .bar {
+			&:nth-child(1){
+				transform: translate(-50%, -0.33em);
+			}
+			&:nth-child(3){
+				transform: translate(-50%, 0.33em);
+			}
+		}
+	}
 
 	&.active {
-		.icon .bar {
+		.hamburger .bar {
 			&:nth-child(1){
+				transform: translate(-50%, -0.33em);
 				animation: hamburger__top__close .6s both ease-out;
 			}
 			&:nth-child(2){
 				opacity: 0;
 			}
 			&:nth-child(3){
+				transform: translate(-50%, 0.33em);
 				animation: hamburger__bottom__close .6s both ease-out;
 			}
 		}
@@ -82,33 +98,35 @@
 	}
 	.container {
 		position: relative;
-		left: calc(var(--icon__width) * 0.62);
+		left: calc(var(--hamburger__width) * 0.62);
 		pointer-events: none;
-		animation: label__load 1.2s both;
-		--icon__width: 1.25em;
+		animation: label__load 1s both;
+
+		--hamburger__width: 1.25em;
 	}
-		.icon {
+		.hamburger {
 			display: inline-block;
 			font-size: 1em;
 			height: 1em;
-			width: var(--icon__width);
+			width: var(--hamburger__width);
 			position: absolute;
 			top: 50%;
-			left: -1.62em;
+			left: -2em;
 			transform: translate(0, -50%);
 			animation: hamburger__load .6s .6s both cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		}
 			.bar {
 				display: block;
 				width: 100%;
-				height: var(--icon__bar__height);
+				height: var(--hamburger__bar__height);
 				position: absolute;
 				left: 50%;
 				right: 50%;
-				top: calc(50% - (var(--icon__bar__height) / 2));
+				top: calc(50% - (var(--hamburger__bar__height) / 2));
 				background-color: var(--color__fg);
-				transition: background .15s, opacity .3s;
-				--icon__bar__height: 0.162em;
+				transition: background .15s, opacity .3s, transform .15s;
+				
+				--hamburger__bar__height: 0.162em;
 
 				&:nth-child(2){
 					transform: translate(-50%, 0);
@@ -126,75 +144,3 @@
 		}
 
 
-@keyframes hamburger__top__close {
-	0% {
-		transform: translate(-50%, -0.5em);
-	}
-	50%, 75% {
-		transform: translate(-50%, 0);
-	}
-	100% {
-		transform: translate(-50%, 0) rotate(45deg);
-	}
-}
-
-@keyframes hamburger__top__open {
-	0% {
-		transform: translate(-50%, 0) rotate(45deg);
-	}
-	50%, 75% {
-		transform: translate(-50%, 0);
-	}
-	100% {
-		transform: translate(-50%, -0.5em);
-	}
-}
-
-@keyframes hamburger__bottom__close {
-	0% {
-		transform: translate(-50%, 0.5em);
-	}
-	50%, 75% {
-		transform: translate(-50%, 0);
-	}
-	100% {
-		transform: translate(-50%, 0) rotate(-45deg);
-	}
-}
-
-@keyframes hamburger__bottom__open {
-	0% {
-		transform: translate(-50%, 0) rotate(-45deg);
-	}
-	50%, 75% {
-		transform: translate(-50%, 0);
-	}
-	100% {
-		transform: translate(-50%, 0.5em);
-	}
-}
-
-@keyframes hamburger__load {
-	0% {
-		opacity: 0;
-		transform: translate(0, -50%) scale(0.5);
-	}
-	50%, 100% {
-		opacity: 1;
-	}
-
-	100% {
-		transform: translate(0, -50%) scale(1);
-	}
-}
-
-@keyframes label__load {
-	from {
-		left: 0em;
-		opacity: 0;
-	}
-	to {
-		left: calc(var(--icon__width) * 0.62);
-		opacity: 1;
-	}
-}
