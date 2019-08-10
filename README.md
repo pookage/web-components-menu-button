@@ -30,8 +30,6 @@ Live demo [here](https://pookage.github.io/web-components-menu-button/dist/)
 
 3. Run `npm run build-dev` to initialise a `webpack-dev-server`, which will hot-reload if the contents of `/src/` are changed.
 
-Tutorial on youtube [here](https://youtu.be/cbE4KoyZS0Y)
-
 ### ...for production
 
 3. Run `npm run build-prod` to bundle the app with `webpack` - the generated `bundle.js` will be placed in `/dist/`.
