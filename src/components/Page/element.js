@@ -1,5 +1,4 @@
 import template from "./template.js";
-import { mutatationObserverConfig } from "./configs.js";
 import { locals as s } from "./styles.scss";
 
 export default class Page extends HTMLElement {

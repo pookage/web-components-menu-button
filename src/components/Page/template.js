@@ -9,7 +9,7 @@ template.innerHTML = `
 	<main class="${s.wrapper}">
 		<menu-button class="${s.menuButton}">
 			<span slot="label">
-				Click Me!
+				Menu
 			</span>
 		</menu-button>
 	</main>
