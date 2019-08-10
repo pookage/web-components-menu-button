@@ -4,8 +4,25 @@
 		<meta charset="UTF-8">
 		<title>Bundled Web Components</title>
 		<script src="./bundle.js"></script>
+		<style>
+			* {
+				padding: 0;
+				border: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html, body {
+				height: 100%;
+			}
+		</style>
 	</head>
 	<body>
-		good day, sir
+		<custom-page>
+			<menu-button class="menu-button">
+				<span slot="label">
+					Click Me!
+				</span>
+			</menu-button>
+		</custom-page>
 	</body>
 </html>

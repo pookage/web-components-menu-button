@@ -1,0 +1,21 @@
+@import "SHARED/reset.scss";
+
+.wrapper {
+	display: inline-block;
+	padding: 1em 1.62em;
+	border: 0.15em solid var(--color__bg);
+	border-radius: 0.5em;
+	font-weight: bold;
+	background-color: var(--color__bg);
+	color: var(--color__fg);
+	transition: background-color .15s, color .15s;
+
+	--color__bg: black;
+	--color__fg: white;
+
+	&:hover {
+		color: var(--color__bg);
+		background-color: var(--color__fg);
+		cursor: pointer;
+	}
+}

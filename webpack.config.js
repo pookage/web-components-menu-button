@@ -55,6 +55,11 @@ function buildConfig(env, args){
 				},
 			]
 		},
+		resolve: {
+			alias: {
+				"SHARED": `${src}/shared`
+			}
+		},
 		...modeOptions,
 	}
 }
